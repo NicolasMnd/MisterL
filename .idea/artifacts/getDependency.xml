@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="getDependency">
+    <output-path>$PROJECT_DIR$/out/artifacts/getDependency</output-path>
+    <root id="archive" name="getDependency.jar">
+      <element id="module-output" name="MisterL" />
+    </root>
+  </artifact>
+</component>
