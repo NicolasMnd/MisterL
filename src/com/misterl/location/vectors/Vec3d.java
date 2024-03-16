@@ -55,17 +55,6 @@ public class Vec3d extends Vector {
         return new Vec3d((Pos3df) this.getStart().subtract(vector.getStart()), (Pos3df) this.getEnd().subtract(vector.getEnd()));
     }
 
-    /**
-     * Computes the cross product with given relative vector. If positive, relative vector is left of this vector.
-     * @param relative The relative position to the vector
-     * @return the cross product
-     */
-    public float cross(Pos3df relative) {
-        relative = (Pos3df) relative.subtract(this.getStart());
-        Pos3df compare = (Pos3df) this.getEnd().subtract(this.getStart());
-        return (compare.x() * relative.y()) - (compare.y() * relative.x());
-    }
-
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Vec3d v)

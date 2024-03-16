@@ -40,9 +40,15 @@ public class TestVec3df {
     }
 
     @Test
+    public void testOffset() {
+        start1.addZ(0.5f);
+        assertTrue(vector1.offset(0.5f).equals(start1));
+    }
+
+    @Test
     public void testReach() {
         start1.addZ(1.5f);
-        assertTrue(vector1.offset(1.5f).equals(start1));
+        assertTrue(vector1.reach(1.5f).equals(start1));
     }
 
     @Test
