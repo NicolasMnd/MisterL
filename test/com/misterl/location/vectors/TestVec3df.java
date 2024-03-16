@@ -32,6 +32,14 @@ public class TestVec3df {
     }
 
     @Test
+    public void testEquals() {
+        Vec3d vclone =vector1.clone();
+        assertTrue(vclone.equals(vector1));
+        assertNotSame(vclone, vector1);
+        assertFalse(vclone.equals(1));
+    }
+
+    @Test
     public void testReach() {
         start1.addZ(1.5f);
         assertTrue(vector1.offset(1.5f).equals(start1));

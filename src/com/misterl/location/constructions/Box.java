@@ -1,4 +1,4 @@
-package com.misterl.location;
+package com.misterl.location.constructions;
 
 public class Box {
 

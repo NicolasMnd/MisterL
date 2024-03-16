@@ -6,15 +6,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestVec2di {
+public class TestVec2df {
 
-    Vec2d vector;
-    Vec2d vector1;
-    Vec2d vector2;
-    Pos2df start;
-    Pos2df end;
-    Pos2df start1;
-    Pos2df end1;
+    Vec2d vector, vector1, vector2;
+    Pos2df start, end, start1, end1, check;
 
     @BeforeEach
     public void initVars() {
@@ -25,6 +20,7 @@ public class TestVec2di {
         vector = new Vec2d(start, end);
         vector2 = new Vec2d(start1, end1);
         vector1 = new Vec2d(start, end);
+        check = new Pos2df(1f, 1f);
     }
 
     @Test
@@ -50,10 +46,13 @@ public class TestVec2di {
 
     @Test
     public void testReach() {
-
         start.addY(2f);
         assertTrue(vector.reach(2.0f).equals(start));
+    }
 
+    @Test
+    public void testCross() {
+        assertEquals(vector.cross(check), -1f);
     }
 
 }

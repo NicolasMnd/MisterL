@@ -31,8 +31,4 @@ public abstract class Vector<T> {
         this.positions[index] = value;
     }
 
-
-
-
-
 }

@@ -28,7 +28,6 @@ public class Pos<T> {
      */
     protected void modify(int index, T value) {
         if(index >= dimension || index < 0) {
-            index = index % this.positions.length;
             return;
         }
         this.positions[index] = value;

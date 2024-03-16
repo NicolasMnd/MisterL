@@ -24,4 +24,8 @@ public abstract class Pos3d<T> extends Pos {
 
     public abstract void addZ(T z);
 
+    public abstract Pos3d<T> subtract(Pos3d<T> pos);
+
+    public abstract Pos3d<T> add(Pos3d<T> pos);
+
 }

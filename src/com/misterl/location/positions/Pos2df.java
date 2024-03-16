@@ -21,6 +21,16 @@ public class Pos2df extends Pos2d<Float> {
         this.modify(1, (float) this.y() + add);
     }
 
+    @Override
+    public Pos2d<Float> subtract(Pos2d<Float> pos) {
+        return new Pos2df(this.x() - pos.x(), this.y() - pos.y());
+    }
+
+    @Override
+    public Pos2d<Float> add(Pos2d<Float> pos) {
+        return new Pos2df(this.x() + pos.x(), this.y() + pos.y());
+    }
+
     public Pos2df clone() {
         return new Pos2df(x(), y());
     }

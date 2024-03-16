@@ -21,6 +21,16 @@ public class Pos2di extends Pos2d<Integer> {
         this.modify(1, (int) this.y() + add);
     }
 
+    @Override
+    public Pos2d<Integer> subtract(Pos2d<Integer> pos) {
+        return new Pos2di(this.x() - pos.x(), this.y() - pos.y());
+    }
+
+    @Override
+    public Pos2d<Integer> add(Pos2d<Integer> pos) {
+        return new Pos2di(this.x() + pos.x(), this.y() + pos.y());
+    }
+
     public Pos2di clone() {
         return new Pos2di(x(), y());
     }

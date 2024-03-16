@@ -18,4 +18,8 @@ public abstract class Pos2d<T> extends Pos {
 
     public abstract void addY(T add);
 
+    public abstract Pos2d<T> subtract(Pos2d<T> pos);
+
+    public abstract Pos2d<T> add(Pos2d<T> pos);
+
 }

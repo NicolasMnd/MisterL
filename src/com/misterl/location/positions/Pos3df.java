@@ -11,19 +11,48 @@ public class Pos3df extends Pos3d<Float> {
         super.modify(index, (Float) value);
     }
 
+    /**
+     * Modifies the z coordinate
+     */
     @Override
     public void addX(Float x) {
         this.modify(0, x() + x);
     }
 
+    /**
+     * Modifies the z coordinate
+     */
     @Override
     public void addY(Float y) {
         this.modify(1, y() + y);
     }
 
+    /**
+     * Modifies the z coordinate
+     */
     @Override
     public void addZ(Float z) {
         this.modify(2, z() + z);
+    }
+
+    /**
+     * Will subtract the given {@link Pos3df} from this.
+     * @param pos the argument that is subtracted from this object
+     * @return the subtracted position
+     */
+    @Override
+    public Pos3d<Float> subtract(Pos3d<Float> pos) {
+        return new Pos3df(this.x() - pos.x(), this.y() - pos.y(), this.z() - pos.z());
+    }
+
+    /**
+     * Will add the given {@link Pos3df} to this.
+     * @param pos the argument that is added to this object
+     * @return the added position
+     */
+    @Override
+    public Pos3d<Float> add(Pos3d<Float> pos) {
+        return new Pos3df(this.x() + pos.x(), this.y() + pos.y(), this.z() + pos.z());
     }
 
     @Override

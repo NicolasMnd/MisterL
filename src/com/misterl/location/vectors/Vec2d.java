@@ -3,6 +3,7 @@ package com.misterl.location.vectors;
 import com.misterl.location.positions.Pos;
 import com.misterl.location.positions.Pos2df;
 import com.misterl.location.positions.Pos2di;
+import com.misterl.location.positions.Pos3df;
 
 public class Vec2d extends Vector {
 
@@ -43,6 +44,17 @@ public class Vec2d extends Vector {
                 (offset * -(getStart().x() - getEnd().x())),
                 (offset * -(getStart().y() - getEnd().y()))
         );
+    }
+
+    /**
+     * Computes the cross product with given relative vector. If positive, relative vector is left of this vector.
+     * @param relative The relative position to the vector
+     * @return the cross product
+     */
+    public float cross(Pos2df relative) {
+        relative = (Pos2df) relative.subtract(this.getStart());
+        Pos2df compare = (Pos2df) this.getEnd().subtract(this.getStart());
+        return (compare.x() * relative.y()) - (compare.y() * relative.x());
     }
 
     @Override

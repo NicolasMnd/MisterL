@@ -1,8 +1,6 @@
 package com.misterl.location.vectors;
 
 import com.misterl.location.positions.Pos;
-import com.misterl.location.positions.Pos2df;
-import com.misterl.location.positions.Pos2di;
 import com.misterl.location.positions.Pos3df;
 
 public class Vec3d extends Vector {
@@ -46,6 +44,26 @@ public class Vec3d extends Vector {
                 (offset * -(getStart().y() - getEnd().y())),
                 (offset * -(getStart().z() - getEnd().z()))
         );
+    }
+
+    /**
+     * Subtracts given vector from this vector.
+     * @param vector the vector that should be subtracted from this vector
+     * @return the subtracted vector
+     */
+    public Vec3d subtract(Vec3d vector) {
+        return new Vec3d((Pos3df) this.getStart().subtract(vector.getStart()), (Pos3df) this.getEnd().subtract(vector.getEnd()));
+    }
+
+    /**
+     * Computes the cross product with given relative vector. If positive, relative vector is left of this vector.
+     * @param relative The relative position to the vector
+     * @return the cross product
+     */
+    public float cross(Pos3df relative) {
+        relative = (Pos3df) relative.subtract(this.getStart());
+        Pos3df compare = (Pos3df) this.getEnd().subtract(this.getStart());
+        return (compare.x() * relative.y()) - (compare.y() * relative.x());
     }
 
     @Override
