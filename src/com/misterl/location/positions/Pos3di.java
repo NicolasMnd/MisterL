@@ -6,6 +6,12 @@ public class Pos3di extends Pos3d<Integer> {
         super(x, y, z);
     }
 
+    public void multiply(int amount) {
+        this.modify(0, this.x()*amount);
+        this.modify(1, this.y()*amount);
+        this.modify(2, this.z()*amount);
+    }
+
     @Override
     protected void modify(int index, Object value) {
         super.modify(index, (Integer) value);

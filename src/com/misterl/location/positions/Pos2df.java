@@ -6,6 +6,11 @@ public class Pos2df extends Pos2d<Float> {
         super(x,y);
     }
 
+    public void multiply(int amount) {
+        this.modify(0, this.x()*amount);
+        this.modify(1, this.y()*amount);
+    }
+
     @Override
     protected void modify(int index, Object value) {
         super.modify(index, (float) value);

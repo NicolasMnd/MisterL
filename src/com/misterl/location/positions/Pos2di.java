@@ -6,6 +6,11 @@ public class Pos2di extends Pos2d<Integer> {
         super(x, y);
     }
 
+    public void multiply(int amount) {
+        this.modify(0, this.x()*amount);
+        this.modify(1, this.y()*amount);
+    }
+
     @Override
     protected void modify(int index, Object value) {
         super.modify(index, (int) value);
